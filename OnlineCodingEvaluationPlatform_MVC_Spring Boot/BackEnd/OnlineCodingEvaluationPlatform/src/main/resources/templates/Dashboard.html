@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+</head>
+<body>
+    <div class="container">
+        <h2>Select an Option:</h2>
+        <form action="/Dashboard" method="post">
+            <!-- Teacher options -->
+            <div class="role-options" th:if="${userRole == 'teacher'}">
+                <div class="role-option">
+                    <input type="radio" id="viewCompetitions" name="option" value="viewCompetitions">
+                    <label for="viewCompetitions">View Competitions</label>
+                </div>
+                <div class="role-option">
+                    <input type="radio" id="createCompetition" name="option" value="createCompetition">
+                    <label for="createCompetition">Create Competition</label>
+                </div>
+                <div class="role-option">
+                    <input type="radio" id="viewChallenges" name="option" value="viewChallenges">
+                    <label for="viewChallenges">View Challenges</label>
+                </div>
+                <div class="role-option">
+                    <input type="radio" id="createChallenge" name="option" value="createChallenge">
+                    <label for="createChallenge">Create Challenge</label>
+                </div>
+            </div>
+            <!-- Student options -->
+            <div class="role-options" th:if="${userRole != 'teacher'}">
+                <div class="role-option">
+                    <input type="radio" id="viewCompetitions" name="option" value="viewCompetitions">
+                    <label for="viewCompetitions">View Competitions</label>
+                </div>
+                <div class="role-option">
+                    <input type="radio" id="viewChallenges" name="option" value="viewChallenges">
+                    <label for="viewChallenges">View Challenges</label>
+                </div>
+            </div>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

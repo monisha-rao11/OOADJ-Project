@@ -1,0 +1,7 @@
+online coding evaluation platform Similar to Hackerrank
+
+For project for course OOAD with Java.
+
+
+
+http://localhost:8070/index
